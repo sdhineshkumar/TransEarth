@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<link href="css/animations.css" rel="stylesheet" />
+	</head>
+	<body ng-app="includeExample">
+		<div ng-controller="ExampleController">
+			<select ng-model="template" ng-options="t.name for t in templates">
+				<option value="">(blank)</option>
+			</select>
+			url of the template: <code>{{template.url}}</code>
+			<hr/>
+			<div class="slide-animate-container">
+				<div class="slide-animate" ng-include="template.url"></div>
+			</div>
+		</div>
+		<!-- script src="assets/js/jquery-1.11.1.js"></script -->
+		<script src="scripts/jquery-1.9.1.min.js"></script>
+		<!-- Angular -->
+		<script src="angular/angular.min.js"></script>
+		<script>
+			angular.module('includeExample', [])
+					.controller('ExampleController', ['$scope', function($scope) {
+						$scope.templates =
+								[ { name: 'template1.html', url: '/TransEarth/template1'},
+									{ name: 'template2.html', url: '/TransEarth/template2'} ];
+						$scope.template = $scope.templates[0];
+						console.log($scope.templates[0].uri);
+					}]);
+		</script>
+	</body>
+</html>

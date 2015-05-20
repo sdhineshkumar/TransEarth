@@ -1,0 +1,46 @@
+<div class="page-header" id="index" ng-controller="indexCtrl">
+	<div class="bs-docs-section">
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="col-md-12">
+					<div class="bs-component">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">Truck Postings</h3>
+							</div>
+							<div class="panel-body">
+								<div id="indexTruckPostListMessage" ng-show="!index.truckPostListShow">
+									<div id="trucklist_alert" ></div>
+								</div>
+								<div ng-show="index.truckPostListShow" class="gridStyle" ng-grid="index.truckPostListGridOptions"></div>
+							</div>
+							<!-- a href="/#truckList" class="btn btn-warning pull-right">For More Truck Posting...</a -->
+							<span class="nav nav-pills pull-right indexMore"><a href="#" ng-click="searchTrucks()">For More Truck Posting...</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<br/>
+				<div class="col-md-12">
+					<div class="bs-component">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title">Load Postings</h3>
+							</div>
+							<div class="panel-body">
+								<div id="indexLoadPostListMessage" ng-show="!index.loadPostListShow">
+									<div id="loadlist_alert" ></div>
+								</div>
+								<div ng-show="index.loadPostListShow" class="gridStyle" ng-grid="index.loadPostListGridOptions"></div>
+							</div>
+							<span class="nav nav-pills pull-right indexMore"><a href="#" ng-click="searchLoad()">For More Load Posting...</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- div class="col-lg-5" style=" background-color:#F4F4F4; width:40%; margin-top:30px; height:auto; float:right; "><img src="images/16318-volvo-truck-300x225-volvo-truck.png" width="520" style="float:right; margin-right:20px;"></div -->
+			<div class="col-lg-5" ><img src="images/transearth_truck.png"></div>
+		</div>
+	</div>
+</div>
+<script src="index.js"></script>
