@@ -719,7 +719,7 @@
 			<!-- Truck Details -->
 			<div class="row">
 				<!-- TERMS & CONDITIONS -->
-				<fieldset ng-if="truckForm.load.$valid">
+				<fieldset>
 					<!-- fieldset ng-if="truckForm.$valid" -->
 					<!-- legend> Terms and Mailing </legend>
                     <div class="form-group-sm">
@@ -740,7 +740,7 @@
 						</div>
 						<div class="col-md-4">
                             <label>&nbsp;&nbsp;</label>
-							<button type="button" class="btn btn-danger btn-sm" ng-click="truck={}">Reset</button>
+							<button type="button" class="btn btn-danger btn-sm" ng-click="reset()">Reset</button>
 						</div>
 					</div>
 					<!-- div class="form-group-sm text-danger" ng-show="!(truckProcess.indicator.tncAccepted)">

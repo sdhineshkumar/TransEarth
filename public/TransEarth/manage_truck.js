@@ -162,6 +162,13 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
     // function to submit the form after all validation has occurred
     $scope.reset = function(){
         $scope.truck = {};
+        $scope.truck.owner = {};
+        $scope.truck.company = {};
+        $scope.truck.details = {};
+
+        $scope.truckProcess.indicator.showAlert = true;
+        $location.hash('truckManagePage');
+        $anchorScroll();
     };
 
     $scope.submitForm = function () {
@@ -252,7 +259,7 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
         else {
             //alert("Please correct errors!");
             $scope.truckProcess.indicator.showAlert = true;
-            succesAlert("Please correct the errors", 'manage_truck_alert');
+            succesError("Please correct the errors", 'manage_truck_alert');
             // set the location.hash to the id of
             // the element you wish to scroll to.
             $location.hash('truckManagePage');
