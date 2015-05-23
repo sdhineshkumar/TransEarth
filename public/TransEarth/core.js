@@ -231,10 +231,11 @@ TransEarthApp.directive('ngCompare', function () {
     }
 });
 
+/*
 TransEarthApp.directive('numbers-only', function(){
     return {
         require: 'ngModel',
-        link: function(scope, element, attrs, modelCtrl) {
+        link: function(scope, element, attr, modelCtrl) {
             modelCtrl.$parsers.push(function (inputValue) {
                 // this next if is necessary for when using ng-required on your input.
                 // In such cases, when a letter is typed first, this parser will be called
@@ -248,6 +249,47 @@ TransEarthApp.directive('numbers-only', function(){
 
                 return transformedInput;
             });
+        }
+    };
+});
+*/
+
+TransEarthApp.directive('numbersOnly', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attr, ngModelCtrl) {
+            function fromUser(text) {
+                if (text) {
+                    var transformedInput = text.replace(/[^0-9]/g, '');
+
+                    if (transformedInput !== text) {
+                        ngModelCtrl.$setViewValue(transformedInput);
+                        ngModelCtrl.$render();
+                    }
+                    return transformedInput;
+                }
+                return undefined;
+            }
+            ngModelCtrl.$parsers.push(fromUser);
+        }
+    };
+});
+
+TransEarthApp.directive('capitalize', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attrs, modelCtrl) {
+            var capitalize = function(inputValue) {
+                if(inputValue == undefined) inputValue = '';
+                var capitalized = inputValue.toUpperCase();
+                if(capitalized !== inputValue) {
+                    modelCtrl.$setViewValue(capitalized);
+                    modelCtrl.$render();
+                }
+                return capitalized;
+            }
+            modelCtrl.$parsers.push(capitalize);
+            capitalize(scope[attrs.ngModel]);  // capitalize initial value
         }
     };
 });

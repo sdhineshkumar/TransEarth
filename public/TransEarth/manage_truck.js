@@ -77,22 +77,30 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
 
     $scope.$watch('truck.details.regno', function() {
         $scope.truck.details.regno = $scope.truck.details.regno.replace(/\s+/g,'');
+        if($scope.truck.details.regno.length <7){$scope.truckForm.regno.$invalid = true;}
+        else{$scope.truckForm.regno.$invalid = false;}
     });
+
 
     $scope.canDisableSameAddress = function(){
         console.log("canDisableSameAddress "+JSON.stringify($scope.truck.owner));
         if(typeof $scope.truck.company == "undefined" && $scope.truck.company == null){
             $scope.truck.company = {};
         }
-        if($scope.disableAddress && typeof $scope.truck.owner.address.line1!="undefined"
+        if($scope.disableAddress /*&& typeof $scope.truck.owner.address.line1!="undefined"
                 && typeof $scope.truck.owner.address.city!="undefined" && typeof $scope.truck.owner.address.state!="undefined" && typeof $scope.truck.owner.address.pincode!="undefined"
-                && $scope.truck.owner.address.line1!=null && $scope.truck.owner.address.city!=null && $scope.truck.owner.address.state!=null && typeof $scope.truck.owner.address.pincode!=null){
+                && $scope.truck.owner.address.line1!=null && $scope.truck.owner.address.city!=null && $scope.truck.owner.address.state!=null && typeof $scope.truck.owner.address.pincode!=null*/){
                 $scope.truck.company.address.line1 = $scope.truck.owner.address.line1;
                 $scope.truck.company.address.line2 = $scope.truck.owner.address.line2;
                 //$scope.truck.company.address.line3 = $scope.truck.owner.address.line3;
                 $scope.truck.company.address.city = $scope.truck.owner.address.city;
-                $scope.truck.company.address.state = $scope.truck.owner.address.state;
                 $scope.truck.company.address.pincode = $scope.truck.owner.address.pincode;
+                //$scope.truck.company.address.state.value = $scope.truck.owner.address.state;
+                //$('option[value=''$scope.truck.owner.address.state]').attr('selected', 'selected');
+                $("#company_state").val($scope.truck.owner.address.state);
+                //  $("#company_state").option($scope.truck.owner.address.state).selected =true;
+            $scope.truck.company.address.state  = $scope.truck.owner.address.state;
+            console.log("canDisableSameAddress company details: "+JSON.stringify($scope.truck.company));
                 //$scope.disableAddress = true;
             }/*else{
                 //$scope.disableAddress = false;

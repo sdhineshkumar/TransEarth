@@ -33,7 +33,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="first_name" id="first_name" ng-model="truck.owner.first_name" placeholder="Enter Owner First Name" ng-minlength="5" ng-maxlength="35" ng-required="true">
+											<input type="text" class="form-control" name="first_name" id="first_name" ng-model="truck.owner.first_name" placeholder="Enter Owner First Name" ng-maxlength="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.first_name.$invalid,
@@ -46,7 +46,7 @@
 											 ng-class="{ 'has-error' : truckForm.first_name.$invalid,
 							 				'has-success' : !(truckForm.first_name.$invalid),
 					 						'has-feedback' : truckForm.first_name.$invalid}"
-											 for="first_name">First Name is mandatory and should be between 5 and 35 characters
+											 for="first_name">First Name is mandatory
 										</div>
 									</div>
 									<!-- pre>{{userForm.user_type.$valid}}</pre -->
@@ -60,7 +60,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="last_name" id="last_name" ng-model="truck.owner.last_name" placeholder="Enter Last Name" ng-minlength="1" ng-required="true">
+											<input type="text" class="form-control" name="last_name" id="last_name" ng-model="truck.owner.last_name" placeholder="Enter Last Name" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.last_name.$invalid,
@@ -73,7 +73,7 @@
 											 ng-class="{ 'has-error' : truckForm.last_name.$invalid,
 							 				'has-success' : !(truckForm.last_name.$invalid),
 					 						'has-feedback' : truckForm.last_name.$invalid}"
-											 for="last_name">Last Name is mandatory and should be have atlease 1 character
+											 for="last_name">Last Name is mandatory
 										</div>
 									</div>
 									<!-- pre>{{userForm.user_type.$valid}}</pre -->
@@ -87,7 +87,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="owner_line1" id="owner_line1" ng-model="truck.owner.address.line1" placeholder="Enter Address Line1" ng-minlength="10" ng-required="true">
+											<input type="text" class="form-control" name="owner_line1" id="owner_line1" ng-model="truck.owner.address.line1" placeholder="Enter Address Line1" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_line1.$invalid,
@@ -100,7 +100,7 @@
 											 ng-class="{ 'has-error' : truckForm.owner_line1.$invalid,
 							 				'has-success' : !(truckForm.owner_line1.$invalid),
 					 						'has-feedback' : truckForm.owner_line1.$invalid}"
-											 for="owner_line1">Line 1 is mandatory and should be of minimum 10 characters
+											 for="owner_line1">Address is mandatory
 										</div>
 									</div>
 								</div>
@@ -127,7 +127,7 @@
 											 ng-class="{ 'has-error' : truckForm.owner_line2.$invalid,
 							 				'has-success' : !(truckForm.owner_line2.$invalid),
 					 						'has-feedback' : truckForm.owner_line2.$invalid}"
-											 for="owner_line2">Line 2 is mandatory and should be of minimum 10 characters
+											 for="owner_line2">
 										</div>
 									</div>
 								</div>
@@ -170,8 +170,49 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="owner_state" id="owner_state" ng-model="truck.owner.address.state" placeholder="Enter State" ng-minlength="1" ng-maxlength="35" ng-required="true">
-										</div>
+											<!--<input type="text" class="form-control" name="owner_state" id="owner_state" ng-model="truck.owner.address.state" placeholder="Enter State"  ng-required="true">
+										    -->
+                                            <select size="1" class="form-control" name="owner_state" id="owner_state" ng-model="truck.owner.address.state" placeholder="Enter State"  ng-required="true">
+                                                <option value=""  selected disabled>Select State</option>
+                                                <option value="Andaman and Nicobar (UT)">Andaman and Nicobar (UT)</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam ">Assam</option>
+                                                <option value="Bihar ">Bihar</option>
+                                                <option value="Chandigarh (UT)">Chandigarh (UT)</option>
+                                                <option value="Chhattishgarh">Chhattishgarh</option>
+                                                <option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
+                                                <option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Puducherry (UT)">Puducherry (UT)</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select>
+
+                                        </div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_state.$invalid,
 										'glyphicon glyphicon-ok' : !(truckForm.owner_state.$invalid),
@@ -198,7 +239,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="number" numbers-only="numbers-only" class="form-control" name="owner_pincode" id="owner_pincode" ng-model="truck.owner.address.pincode" placeholder="Enter Pincode" ng-minlength="6" ng-maxlength="6" ng-required="true">
+											<input type="text" numbers-only="numbers-only" maxlength="6" class="form-control" name="owner_pincode" id="owner_pincode" ng-model="truck.owner.address.pincode" placeholder="Enter Pincode" ng-minlength="6" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_pincode.$invalid,
@@ -208,10 +249,10 @@
 										</i>
 										<div ng-if="truckForm.owner_pincode.$invalid"
 											 class="help-block"
-											 ng-class="{ 'has-error' : truckForm.owner_pincode.$invalid,
+                    						 ng-class="{ 'has-error' : truckForm.owner_pincode.$invalid,
 										'has-success' : !(truckForm.owner_pincode.$invalid),
 										'has-feedback' : truckForm.owner_pincode.$invalid}"
-											 for="owner_pincode">Pincode is mandatory
+                                             for="owner_pincode">Pincode is mandatory. Please enter a 6 digit pincode
 										</div>
 									</div>
 									<!-- pre>{{userForm.user_type.$valid}}</pre -->
@@ -226,7 +267,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-mobile fa-2"></i></span>
-											<input type="number" numbers-only="numbers-only" class="form-control" name="owner_contact" id="owner_contact" ng-model="truck.owner.contact" placeholder="Enter Contact Number" ng-minlength="10" ng-required="true">
+											<input type="text" numbers-only="numbers-only" maxlength = "11" class="form-control" name="owner_contact" id="owner_contact" ng-model="truck.owner.contact" placeholder="Enter Contact Number" ng-minlength="10" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_contact.$invalid,
@@ -265,7 +306,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="company_name" id="company_name" ng-model="truck.company.name" placeholder="Enter Company Name" ng-minlength="4" ng-maxlength="35" ng-required="true">
+											<input type="text" class="form-control" name="company_name" id="company_name" ng-model="truck.company.name" placeholder="Enter Company Name" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_name.$invalid,
@@ -278,7 +319,7 @@
 											 ng-class="{ 'has-error' : truckForm.company_name.$invalid,
 							 				'has-success' : !(truckForm.company_name.$invalid),
 					 						'has-feedback' : truckForm.company_name.$invalid}"
-											 for="company_name">Company Name is mandatory and should be between 5 and 35 characters
+											 for="company_name">Company Name is mandatory
 										</div>
 									</div>
 									<!-- pre>{{userForm.user_type.$valid}}</pre -->
@@ -314,7 +355,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line1" id="company_line1" ng-model="truck.company.address.line1" placeholder="Enter Address Line1" ng-minlength="10" ng-required="true">
+											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line1" id="company_line1" ng-model="truck.company.address.line1" placeholder="Enter Address Line1" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_line1.$invalid,
@@ -327,7 +368,7 @@
 											 ng-class="{ 'has-error' : truckForm.company_line1.$invalid,
 							 				'has-success' : !(truckForm.company_line1.$invalid),
 					 						'has-feedback' : truckForm.company_line1.$invalid}"
-											 for="company_line1">Line 1 is mandatory and should be of minimum 10 characters
+											 for="company_line1">Line 1 is mandatory
 										</div>
 									</div>
 								</div>
@@ -354,7 +395,7 @@
 											 ng-class="{ 'has-error' : truckForm.company_line2.$invalid,
 							 				'has-success' : !(truckForm.company_line2.$invalid),
 					 						'has-feedback' : truckForm.company_line2.$invalid}"
-											 for="company_line2">Line 2 is mandatory and should be of minimum 10 characters
+											 for="company_line2">
 										</div>
 									</div>
 								</div>
@@ -397,7 +438,47 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_state" id="company_state" ng-model="truck.company.address.state" placeholder="Enter State" ng-minlength="1" ng-maxlength="35" ng-required="true">
+											<!--<input type="text" class="form-control" ng-disabled="disableAddress" name="company_state" id="company_state" ng-model="truck.company.address.state" placeholder="Enter State" ng-required="true">
+										    -->
+                                            <select size="1" class="form-control" ng-disabled="disableAddress" name="company_state" id="company_state" ng-model="truck.company.address.state" placeholder="Enter State" ng-required="true">
+                                                <option value=""  selected disabled>Select State</option>
+                                                <option value="Andaman and Nicobar (UT)">Andaman and Nicobar (UT)</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam ">Assam</option>
+                                                <option value="Bihar ">Bihar</option>
+                                                <option value="Chandigarh (UT)">Chandigarh (UT)</option>
+                                                <option value="Chhattishgarh">Chhattishgarh</option>
+                                                <option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
+                                                <option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Puducherry (UT)">Puducherry (UT)</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select>
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_state.$invalid,
@@ -425,7 +506,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="number" numbers-only="numbers-only" ng-disabled="disableAddress" class="form-control" name="company_pincode" id="company_pincode" ng-model="truck.company.address.pincode" placeholder="Enter Pincode" ng-minlength="6" ng-maxlength="6" ng-required="true">
+											<input type="text" numbers-only="numbers-only" maxlength="6" ng-disabled="disableAddress" class="form-control" name="company_pincode" id="company_pincode" ng-model="truck.company.address.pincode" placeholder="Enter Pincode" ng-minlength="6" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_pincode.$invalid,
@@ -465,7 +546,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-mobile fa-2"></i></span>
-											<input type="number" numbers-only="numbers-only" ng-disabled="disableContact" class="form-control" name="company_contact" id="company_contact" ng-model="truck.company.contact" placeholder="Enter Contact Number" ng-minlength="10" ng-required="true">
+											<input type="text" numbers-only="numbers-only" maxlength="11" ng-disabled="disableContact" class="form-control" name="company_contact" id="company_contact" ng-model="truck.company.contact" placeholder="Enter Contact Number" ng-minlength="10" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_contact.$invalid,
@@ -500,11 +581,11 @@
 									 ng-class="{ 'has-error' : truckForm.truck_name.$invalid,
 							 				'has-success' : !(truckForm.truck_name.$invalid),
 					 						'has-feedback' : truckForm.truck_name.$invalid}">
-									<label class="col-lg-8 control-label">Truck Name</label>
+									<label class="col-lg-8 control-label">Truck Type</label>
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-truck"></i></span>
-											<input type="text" class="form-control" name="truck_name" id="truck_name" ng-model="truck.details.name" placeholder="Enter Truck Name">
+											<input type="text" class="form-control" name="truck_name" id="truck_name" ng-model="truck.details.name" placeholder="Enter Truck Type" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.truck_name.$invalid,
@@ -517,7 +598,7 @@
 											 ng-class="{ 'has-error' : truckForm.truck_name.$invalid,
 							 				'has-success' : !(truckForm.truck_name.$invalid),
 					 						'has-feedback' : truckForm.truck_name.$invalid}"
-											 for="truck_name">Luck favors - Add Truck Name if you have
+											 for="truck_name">Truck Type is mandatory
 										</div>
 									</div>
 								</div>
@@ -531,7 +612,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="make" id="make" ng-model="truck.details.make" placeholder="Enter Make" ng-minlength="1" ng-required="true">
+											<input type="text" class="form-control" name="make" id="make" ng-model="truck.details.make" placeholder="Enter Make" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.make.$invalid,
@@ -558,7 +639,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="model" id="model" ng-model="truck.details.model" placeholder="Enter Model" ng-minlength="1" ng-required="true">
+											<input type="text" class="form-control" name="model" id="model" ng-model="truck.details.model" placeholder="Enter Model" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.model.$invalid,
@@ -585,7 +666,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="regno" id="regno" ng-model="truck.details.regno" placeholder="Enter Reg No" ng-minlength="4" ng-required="true">
+											<input type="text" maxlength="10" class="form-control" name="regno" id="regno" ng-model="truck.details.regno" placeholder="Enter Reg No" ng-required="true" capitalize>
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.regno.$invalid,
@@ -598,7 +679,7 @@
 											 ng-class="{ 'has-error' : truckForm.regno.$invalid,
 							 				'has-success' : !(truckForm.regno.$invalid),
 					 						'has-feedback' : truckForm.regno.$invalid}"
-											 for="regno">Registration Number is mandatory. Minimum length 4
+											 for="regno">Registration Number is mandatory. Enter without spaces e.g. TN01XX0001
 										</div>
 									</div>
 								</div>
@@ -608,11 +689,11 @@
 									 ng-class="{ 'has-error' : truckForm.load.$invalid,
 							 				'has-success' : !(truckForm.load.$invalid),
 					 						'has-feedback' : truckForm.load.$invalid}">
-									<label class="col-lg-8 control-label">Load</label>
+									<label class="col-lg-8 control-label">Capacity (in tons)</label>
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="number" class="form-control" name="load" id="load" ng-model="truck.details.load" placeholder="Enter Load in Tons" ng-minlength="1" ng-minlength="4" ng-required="true">
+											<input type="text" numbers-only maxlength="2" class="form-control" name="load" id="load" ng-model="truck.details.load" placeholder="Enter Load in Tons" ng-minlength="1" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.load.$invalid,
@@ -625,7 +706,7 @@
 											 ng-class="{ 'has-error' : truckForm.load.$invalid,
 							 				'has-success' : !(truckForm.load.$invalid),
 					 						'has-feedback' : truckForm.load.$invalid}"
-											 for="load">Load is mandatory. Enter it in numbers
+											 for="load">Capacity is mandatory. Enter capacity in tons
 										</div>
 									</div>
 								</div>
@@ -638,7 +719,7 @@
 			<!-- Truck Details -->
 			<div class="row">
 				<!-- TERMS & CONDITIONS -->
-				<fieldset class="pull-right" ng-if="truckForm.load.$valid">
+				<fieldset ng-if="truckForm.load.$valid">
 					<!-- fieldset ng-if="truckForm.$valid" -->
 					<!-- legend> Terms and Mailing </legend>
                     <div class="form-group-sm">
@@ -655,8 +736,10 @@
 						<div class="col-md-offset-3 col-md-3">
 							<!-- button type="submit" class="btn btn-success btn-sm" ng-model="button" ng-disabled="!truckProcess.indicator.tncAccepted">{{page.header}}</button -->
 							<button type="submit" class="btn btn-success btn-sm" ng-model="button" >{{page.header}}</button>
+                            <!--<label>&nbsp;&nbsp;</label>-->
 						</div>
 						<div class="col-md-4">
+                            <label>&nbsp;&nbsp;</label>
 							<button type="button" class="btn btn-danger btn-sm" ng-click="truck={}">Reset</button>
 						</div>
 					</div>
@@ -683,7 +766,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">ï¿½</button>
 				<h4 class="modal-title">Terms and Conditions</h4>
 			</div>
 			<div class="modal-body">
