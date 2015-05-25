@@ -66,9 +66,9 @@ var userSchema = mongoose.Schema({
             city : { type: String, required: true},
             state : { type: String, required: true},
             country : { type: String},
-            pincode : { type: Number, required: true}
+            pincode : { type: String, required: true}
         },
-        contact : [{ type: Number, required: true}]
+        contact : [{ type: String, required: true}]
     },
     accessToken: { type: String }, // Used for Remember Me
     //type:{type: String,required: true},

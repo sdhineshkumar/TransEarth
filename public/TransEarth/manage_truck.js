@@ -4,7 +4,6 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
     $scope.truckForm = {};
 
     $scope.truck = TruckRequest.getSharedTruck();
-
     $scope.addTruckInd = false;
     $scope.editTruckInd = false;
     $scope.dumpTruck = function(){
@@ -16,11 +15,13 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
         if(typeof $scope.truckShared != "undefined" && typeof $scope.truckShared.owner != "undefined" && typeof $scope.truckShared.company != "undefined"
             && $scope.truckShared.company.contact_same_as_owner){
             $scope.disableContact = $scope.truckShared.company.contact_same_as_owner;
+            console.log($scope.truckShared.owner.contact);
             $scope.truckShared.company.contact = $scope.truckShared.owner.contact;
+            console.log($scope.truckShared.company.contact);
         }
         if(typeof $scope.truckShared != "undefined" && typeof $scope.truckShared.truck_details != "undefined" ){
             $scope.truckShared.details = {};
-            $scope.truckShared.details.name = $scope.truckShared.truck_details.name;
+            $scope.truckShared.details.type = $scope.truckShared.truck_details.type;
             $scope.truckShared.details.make = $scope.truckShared.truck_details.make;
             $scope.truckShared.details.model = $scope.truckShared.truck_details.model;
             $scope.truckShared.details.regno = $scope.truckShared.truck_details.reg_no;
@@ -165,6 +166,7 @@ function truckManageCtrl($scope, $http, $location, $anchorScroll, UserRequest, T
         $scope.truck.owner = {};
         $scope.truck.company = {};
         $scope.truck.details = {};
+        //iuig
 
         $scope.truckProcess.indicator.showAlert = true;
         $location.hash('truckManagePage');

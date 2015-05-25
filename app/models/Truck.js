@@ -16,22 +16,22 @@ var postSchema = new Schema({
             "delivery_location" : { type: String, required: true, trim : true}
         },
         minimum_load : {
-            quantity : {type: Number, required: true, trim: true},
+            quantity : {type: String, required: true, trim: true},
             unit : {type: String, required: true, trim: true}
         },
         maximum_load : {
-            quantity : {type: Number, required: true, trim: true},
+            quantity : {type: String, required: true, trim: true},
             unit : {type: String, required: true, trim: true}
         }
     },
     load_handling : {
         //owned_by : { type: String, trim: true},
         minimum_load : {
-            metric : {type: Number, trim: true},
+            metric : {type: String, trim: true},
             unit : {type: String, trim: true}
         },
         maximum_load : {
-            metric : {type: Number, required: true, trim: true},
+            metric : {type: String, required: true, trim: true},
             unit : {type: String, required: true, trim: true}
         },
         material :{
@@ -46,7 +46,7 @@ var postSchema = new Schema({
             last_name: { type: String, required: true},
             company_name: { type: String, required: true},
             user_type : {type: String, required: true},
-            contact : [{ type: Number, required: true}]
+            contact : [{ type: String, required: true}]
         }
     },
     pickup : {
@@ -58,7 +58,7 @@ var postSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         },
         alt_address : {
             line1 : { type: String, required: true},
@@ -67,7 +67,7 @@ var postSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         }
     },
     delivery : {
@@ -79,7 +79,7 @@ var postSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         },
         alt_address : {
             line1 : { type: String, required: true, trim : true},
@@ -88,7 +88,7 @@ var postSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         }
     }
 });
@@ -105,7 +105,7 @@ var truckSchema = new Schema({
             display_name : {type: String},
             company_name: { type: String, required: true},
             user_type : {type: String, required: true},
-            contact : [{ type: Number, required: true}]
+            contact : [{ type: String, required: true}]
         }
     },
     owner : {
@@ -118,9 +118,9 @@ var truckSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         },
-        contact : { type: Number, required: true, trim : true}
+        contact : { type: String, required: true, trim : true}
     },
     company : {
         name: { type: String, required: true, trim : true},
@@ -133,22 +133,22 @@ var truckSchema = new Schema({
             city : { type: String, required: true, trim : true},
             state : { type: String, required: true, trim : true},
             country : { type: String, trim : true},
-            pincode : { type: Number, required: true, trim : true}
+            pincode : { type: String, required: true, trim : true}
         },
-        contact : { type: Number, required: true, trim : true}
+        contact : { type: String, required: true, trim : true}
     },
     truck_details : {
-        name : {type: String, trim: true},
+        type : {type: String, trim: true},
         make : {type: String, required: true, trim: true},
         model : {type: String, required: true, trim: true},
         reg_no : {type: String, required: true, trim: true},
         isActive : {type: Boolean, required: true, trim: true},
         minimum_load : {
-            quantity : {type: Number, trim: true},
+            quantity : {type: String, trim: true},
             unit : {type: String, trim: true}
         },
         maximum_load : {
-            quantity : {type: Number, required: true, trim: true},
+            quantity : {type: String, required: true, trim: true},
             unit : {type: String, required: true, trim: true}
         },
         discontinueReason : {type: String, trim: true}

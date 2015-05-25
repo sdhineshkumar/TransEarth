@@ -74,11 +74,12 @@ function loginCtrl($scope, $http, $location, $anchorScroll, UserRequest) {
     };
     $scope.passwordMismatch = true;
     $scope.passwordValidation = function() {
-        console.log("$scope.user.newPassword - "+$scope.user.password+" $scope.user.confirmPassword - "+$scope.user.confirmPassword);
-        if($scope.user.password != $scope.user.confirmPassword){
-            $scope.passwordMismatch = true;
-        }else{
-            $scope.passwordMismatch = false;
+        if ($scope.user.confirmPassword != undefined) {
+            if ($scope.user.password != $scope.user.confirmPassword) {
+                $scope.passwordMismatch = true;
+            } else {
+                $scope.passwordMismatch = false;
+            }
         }
     };
 
@@ -100,6 +101,9 @@ function loginCtrl($scope, $http, $location, $anchorScroll, UserRequest) {
     $scope.reset = function(){
         $scope.user = {};
         $scope.register = {};
+        $scope.passwordMismatch = true;
+        $location.hash('registerForm');
+        $anchorScroll();
     };
 
     $scope.submitForm = function () {
@@ -127,9 +131,9 @@ function loginCtrl($scope, $http, $location, $anchorScroll, UserRequest) {
                     // call $anchorScroll()
                     $anchorScroll();
                 }).error(function(data) {
-                    console.log("User saved failed:"+data);
-                    $scope.saved = false;
-                    succesError(data, 'login_alert');
+                    console.log("User saved failed:"+JSON.stringify(data));
+                    $scope.saved = true;
+                    succesError(data.statusMsg, 'login_alert');
                     // set the location.hash to the id of
                     // the element you wish to scroll to.
                     $location.hash('registerForm');
@@ -144,6 +148,7 @@ function loginCtrl($scope, $http, $location, $anchorScroll, UserRequest) {
         }
         else {
             //alert("Please correct errors!");
+            $scope.saved = true;
             succesError("Please correct Errors", 'login_alert');
             // set the location.hash to the id of
             // the element you wish to scroll to.

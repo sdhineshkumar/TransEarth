@@ -707,18 +707,18 @@ exports.addTruck = function(req, res){
             contact : input.company.contact
         },
         truck_details : {
-            name : input.details.name,
+            type : input.details.type,
             make : input.details.make,
             model : input.details.model,
             reg_no : input.details.regno,
             isActive : true,
             minimum_load : {
                 quantity : input.details.load,
-                unit : "Tonne"
+                unit : "Tons"
             },
             maximum_load : {
                 quantity : input.details.load,
-                unit : "Tonne"
+                unit : "Tons"
             }
             //discontinueReason : {type: String, trim: true}
         },
@@ -848,18 +848,18 @@ exports.editTruck = function(req, res){
                         contact : input.company.contact
                     },
                     truck_details : {
-                        name : input.details.name,
+                        type : input.details.type,
                         make : input.details.make,
                         model : input.details.model,
                         reg_no : input.details.regno,
                         isActive : true,
                         minimum_load : {
                             quantity : input.details.load,
-                            unit : "Tonne"
+                            unit : "Tons"
                         },
                         maximum_load : {
                             quantity : input.details.load,
-                            unit : "Tonne"
+                            unit : "Tons"
                         }
                         //discontinueReason : {type: String, trim: true}
                     },

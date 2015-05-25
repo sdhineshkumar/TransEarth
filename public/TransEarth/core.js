@@ -294,6 +294,7 @@ TransEarthApp.directive('capitalize', function() {
     };
 });
 
+
 //Route Provider to load views with ng-view
 TransEarthApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider) {
@@ -346,7 +347,7 @@ function convertDateStringsToDates(input) {
 }
 
 //Head controller to load page title
-function coreController($scope, $rootScope, $http, $location, UserRequest) {
+function coreController($scope, $rootScope, $http, $location, UserRequest ,TruckRequest) {
 //function coreController($scope, $route, $http, $location, UserRequest) {
     //alert('Inside coreController');
     $scope.siteTitle = 'Transport Earth';
@@ -455,6 +456,7 @@ function coreController($scope, $rootScope, $http, $location, UserRequest) {
     };
     $scope.addTruck = function(){
         //console.log("Add Truck clicked");
+        TruckRequest.setSharedTruck(null);
         $scope.page.template = ''+"/TransEarth/manage_truck";
         $scope.page.scope = "Add Truck";
         //console.log("Search Truck clicked : "+$scope.pageTemplate);

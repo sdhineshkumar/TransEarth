@@ -33,7 +33,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="first_name" id="first_name" ng-model="truck.owner.first_name" placeholder="Enter Owner First Name" ng-maxlength="35" ng-required="true">
+											<input type="text" class="form-control" name="first_name" id="first_name" ng-model="truck.owner.first_name" placeholder="Enter Owner First Name" ng-maxlength="35" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.first_name.$invalid,
@@ -60,7 +60,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="last_name" id="last_name" ng-model="truck.owner.last_name" placeholder="Enter Last Name" ng-required="true">
+											<input type="text" class="form-control" name="last_name" id="last_name" ng-model="truck.owner.last_name" placeholder="Enter Last Name" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.last_name.$invalid,
@@ -87,7 +87,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="owner_line1" id="owner_line1" ng-model="truck.owner.address.line1" placeholder="Enter Address Line1" ng-required="true">
+											<input type="text" class="form-control" name="owner_line1" id="owner_line1" ng-model="truck.owner.address.line1" placeholder="Enter Address Line1" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_line1.$invalid,
@@ -114,7 +114,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="owner_line2" id="owner_line2" ng-model="truck.owner.address.line2" placeholder="Enter Address Line2">
+											<input type="text" class="form-control" name="owner_line2" id="owner_line2" ng-model="truck.owner.address.line2" placeholder="Enter Address Line2" MAXLENGTH="35">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.owner_line2.$invalid,
@@ -306,7 +306,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" name="company_name" id="company_name" ng-model="truck.company.name" placeholder="Enter Company Name" ng-required="true">
+											<input type="text" class="form-control" name="company_name" id="company_name" ng-model="truck.company.name" placeholder="Enter Company Name" MAXLENGTH="45" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_name.$invalid,
@@ -355,7 +355,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line1" id="company_line1" ng-model="truck.company.address.line1" placeholder="Enter Address Line1" ng-required="true">
+											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line1" id="company_line1" ng-model="truck.company.address.line1" placeholder="Enter Address Line1" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_line1.$invalid,
@@ -382,7 +382,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line2" id="company_line2" ng-model="truck.company.address.line2" placeholder="Enter Address Line2">
+											<input type="text" class="form-control" ng-disabled="disableAddress" name="company_line2" id="company_line2" ng-model="truck.company.address.line2" MAXLENGTH="35" placeholder="Enter Address Line2">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.company_line2.$invalid,
@@ -576,29 +576,29 @@
 						</div>
 						<div class="panel-body">
 							<fieldset>
-								<!-- Truck NAME -->
+								<!-- Truck Type -->
 								<div class="form-group-sm"
-									 ng-class="{ 'has-error' : truckForm.truck_name.$invalid,
-							 				'has-success' : !(truckForm.truck_name.$invalid),
-					 						'has-feedback' : truckForm.truck_name.$invalid}">
+									 ng-class="{ 'has-error' : truckForm.truck_type.$invalid,
+							 				'has-success' : !(truckForm.truck_type.$invalid),
+					 						'has-feedback' : truckForm.truck_type.$invalid}">
 									<label class="col-lg-8 control-label">Truck Type</label>
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-truck"></i></span>
-											<input type="text" class="form-control" name="truck_name" id="truck_name" ng-model="truck.details.name" placeholder="Enter Truck Type" ng-required="true">
+											<input type="text" class="form-control" name="truck_type" id="truck_type" ng-model="truck.details.type" placeholder="Enter Truck Type" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
-										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.truck_name.$invalid,
-							 				'glyphicon glyphicon-ok' : !(truckForm.truck_name.$invalid),
-					 						'has-feedback' : truckForm.truck_name.$valid}"
-										   for="truck_name">
+										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.truck_type.$invalid,
+							 				'glyphicon glyphicon-ok' : !(truckForm.truck_type.$invalid),
+					 						'has-feedback' : truckForm.truck_type.$valid}"
+										   for="truck_type">
 										</i>
-										<div ng-if="truckForm.truck_name.$invalid"
+										<div ng-if="truckForm.truck_type.$invalid"
 											 class="help-block"
-											 ng-class="{ 'has-error' : truckForm.truck_name.$invalid,
-							 				'has-success' : !(truckForm.truck_name.$invalid),
-					 						'has-feedback' : truckForm.truck_name.$invalid}"
-											 for="truck_name">Truck Type is mandatory
+											 ng-class="{ 'has-error' : truckForm.truck_type.$invalid,
+							 				'has-success' : !(truckForm.truck_type.$invalid),
+					 						'has-feedback' : truckForm.truck_type.$invalid}"
+											 for="truck_type">Truck Type is mandatory
 										</div>
 									</div>
 								</div>
@@ -612,7 +612,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="make" id="make" ng-model="truck.details.make" placeholder="Enter Make" ng-required="true">
+											<input type="text" class="form-control" name="make" id="make" ng-model="truck.details.make" placeholder="Enter Make" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.make.$invalid,
@@ -639,7 +639,7 @@
 									<div class="col-lg-12">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-map-marker fa-2"></i></span>
-											<input type="text" class="form-control" name="model" id="model" ng-model="truck.details.model" placeholder="Enter Model" ng-required="true">
+											<input type="text" class="form-control" name="model" id="model" ng-model="truck.details.model" placeholder="Enter Model" MAXLENGTH="35" ng-required="true">
 										</div>
 										<i class="form-control-feedback"
 										   ng-class="{ 'glyphicon glyphicon-remove' : truckForm.model.$invalid,
@@ -735,7 +735,8 @@
 					<div class="form-group-sm">
 						<div class="col-md-offset-3 col-md-3">
 							<!-- button type="submit" class="btn btn-success btn-sm" ng-model="button" ng-disabled="!truckProcess.indicator.tncAccepted">{{page.header}}</button -->
-							<button type="submit" class="btn btn-success btn-sm" ng-model="button" >{{page.header}}</button>
+						<!--	<button type="submit" class="btn btn-success btn-sm" ng-model="button" >{{page.header}}</button>-->
+                            <button type="submit" class="btn btn-success btn-sm" ng-model="button" >{{"Submit"}}</button>
                             <!--<label>&nbsp;&nbsp;</label>-->
 						</div>
 						<div class="col-md-4">
